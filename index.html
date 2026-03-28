@@ -8,35 +8,73 @@
             font-family: Arial;
             margin: 0;
             background: #f4f4f4;
-        }
-
-        header {
-            background: #222;
-            color: white;
-            text-align: center;
-            padding: 30px;
-        }
-
-        section {
-            padding: 20px;
-            margin: 10px;
-            background: white;
-            border-radius: 10px;
-        }
-
-        h2 {
             color: #333;
         }
 
-        h3 {
-            color: #555;
+        header {
+            text-align: center;
+            padding: 40px;
+            background: #4f46e5;
+            color: white;
+            animation: fadeIn 2s ease-in-out;
         }
 
-        footer {
-            text-align: center;
-            padding: 10px;
-            background: #222;
-            color: white;
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+            transform: translateY(30px);
+            opacity: 0;
+            animation: slideUp 1s forwards;
+        }
+
+        .card:nth-child(1) { animation-delay: 0.3s; }
+        .card:nth-child(2) { animation-delay: 0.6s; }
+        .card:nth-child(3) { animation-delay: 0.9s; }
+        .card:nth-child(4) { animation-delay: 1.2s; }
+
+        h2 {
+            color: #4f46e5;
+        }
+
+        .progress {
+            background: #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .progress div {
+            height: 10px;
+            background: #4f46e5;
+        }
+
+        a {
+            color: #4f46e5;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @keyframes slideUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
     </style>
 </head>
@@ -48,50 +86,41 @@
     <p>Aspiring Software Developer</p>
 </header>
 
-<section>
-    <h2>About Me</h2>
-    <p>I am a student passionate about programming and web development. I have knowledge in Python, C++, Java, SQL and Data Structures.</p>
-</section>
+<div class="container">
 
-<section>
-    <h2>Skills</h2>
+    <div class="card">
+        <h2>About</h2>
+        <p>Passionate about coding, DSA, and web development.</p>
+    </div>
 
-    <h3>Languages</h3>
-    <ul>
-        <li>Python</li>
-        <li>C++</li>
-        <li>Java</li>
-        <li>SQL</li>
-    </ul>
+    <div class="card">
+        <h2>Skills</h2>
+        <p>Python</p>
+        <div class="progress"><div style="width:80%"></div></div>
 
-    <h3>Frameworks / Libraries</h3>
-    <ul>
-        <li>Pandas</li>
-        <li>NumPy</li>
-    </ul>
+        <p>C++</p>
+        <div class="progress"><div style="width:70%"></div></div>
 
-    <h3>Tools</h3>
-    <ul>
-        <li>Linux</li>
-        <li>VS Code</li>
-        <li>Git &amp; GitHub</li>
-    </ul>
-</section>
+        <p>Java</p>
+        <div class="progress"><div style="width:65%"></div></div>
+    </div>
 
-<section>
-    <h2>Projects</h2>
-    <p>• Book Organizer using Python</p>
-    <p>• Personal Portfolio Website</p>
-</section>
+    <div class="card">
+        <h2>Projects</h2>
+        <p>📌 Book Organizer (Python)</p>
+        <p>📌 Portfolio Website</p>
+    </div>
 
-<section>
-    <h2>Contact</h2>
-    <p>Email:Kumarprashant24072@gmail.com</p>
-</section>
+    <div class="card">
+        <h2>Contact</h2>
+        <p>Email: 
+            <a href="mailto:Kumarprashant24072@gmail.com">
+                Kumarprashant24072@gmail.com
+            </a>
+        </p>
+    </div>
 
-<footer>
-    <p>© 2026 Prashant Kumar</p>
-</footer>
+</div>
 
 <!-- Code injected by live-server -->
 <script>
